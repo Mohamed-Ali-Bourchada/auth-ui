@@ -1,59 +1,97 @@
-# AuthDashboard
+# Auth Dashboard - Modern Authentication Template
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
+A beautiful, responsive authentication UI template built with Angular, Tailwind CSS, and Angular Material. This template provides a modern and sleek authentication experience with animated UI elements, form validation, and a clean design.
 
-## Development server
+![Auth Dashboard Preview](public/screenshots/preview.png)
 
-To start a local development server, run:
+## Features
+
+- 🎨 **Modern UI Design** - Clean, professional design with smooth animations and transitions
+- 🔒 **Complete Authentication Flows** - Login, signup, and password recovery screens
+- 📱 **Fully Responsive** - Works beautifully on all device sizes
+- ✅ **Form Validation** - Built-in validation for all form fields
+- 🎭 **Animation Effects** - Gradient backgrounds, subtle hover states, and loading animations
+- 🔄 **Social Authentication** - Ready-to-integrate social login buttons (Google, GitHub)
+- 🛠️ **Built with Angular & Tailwind** - Leveraging modern web technologies
+
+## Authentication Pages
+
+### Login Page
+
+- Email/password authentication
+- Social login options (Google, GitHub, SSO)
+- Remember me functionality
+- Password recovery link
+- Form validation with error messages
+- Loading state animation
+
+### Signup Page
+
+- New user registration
+- Name, email, and password fields
+- Terms and conditions acceptance
+- Social signup options
+- Form validation with error messages
+- Loading state animation
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14+ recommended)
+- Angular CLI
+
+### Installation
+
+1. Clone the repository or download the template
+2. Install dependencies:
+
+```bash
+cd auth-dashboard
+npm install
+```
+
+3. Start the development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Open your browser and navigate to `http://localhost:4200/`
 
-## Code scaffolding
+## Development
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Development server
 
-```bash
-ng generate component component-name
-```
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Code scaffolding
 
-```bash
-ng generate --help
-```
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Building
+### Build
 
-To build the project run:
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-```bash
-ng build
-```
+## Customization
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The template is built with customization in mind:
 
-## Running unit tests
+- **Colors**: Update the color scheme in `tailwind.config.js` and `styles.scss`
+- **Animations**: Modify animations in `styles.scss`
+- **Form Fields**: Easily add or remove fields in the authentication components
+- **Logo**: Replace the logo in the authentication pages
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Integration with Authentication Providers
 
-```bash
-ng test
-```
+This template can be easily integrated with various authentication providers:
 
-## Running end-to-end tests
+1. **Firebase Authentication**
+2. **Auth0**
+3. **AWS Cognito**
+4. **Keycloak**
+5. **Custom authentication backend**
 
-For end-to-end (e2e) testing, run:
+## License
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is licensed under the MIT License - see the LICENSE file for details.
