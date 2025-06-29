@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/shared/header/header';
-import { FooterComponent } from './components/shared/footer/footer';
+// import { HeaderComponent } from './components/shared/header/header';
+// import { FooterComponent } from './components/shared/footer/footer';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +10,12 @@ import { FooterComponent } from './components/shared/footer/footer';
   imports: [
     CommonModule,
     RouterOutlet,
-    HeaderComponent,
-    FooterComponent
+    // HeaderComponent,
+    // FooterComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class AppComponent {
   title = 'Auth Dashboard';
-} 
+}
