@@ -47,7 +47,7 @@ A beautiful, responsive authentication UI template built with Angular, Tailwind 
 2. Install dependencies:
 
 ```bash
-cd auth-dashboard
+cd auth-ui
 npm install
 ```
 
