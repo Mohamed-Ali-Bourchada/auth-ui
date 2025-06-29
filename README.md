@@ -13,6 +13,7 @@ A beautiful, responsive authentication UI template built with Angular, Tailwind 
 - 🎭 **Animation Effects** - Gradient backgrounds, subtle hover states, and loading animations
 - 🔄 **Social Authentication** - Ready-to-integrate social login buttons (Google, GitHub)
 - 🛠️ **Built with Angular & Tailwind** - Leveraging modern web technologies
+- ⚡ **Performance Optimized** - Compressed assets, optimized CSS/JS, and fast loading times
 
 ## Authentication Pages
 
@@ -69,9 +70,50 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-### Build
+## Build & Deployment
+
+### Development Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+### Production Build
+
+For optimized production builds with performance enhancements:
+
+```bash
+npm run build:prod
+```
+
+This command uses optimized settings for:
+
+- JavaScript minification
+- CSS purging and optimization
+- Dead code elimination
+- Asset optimization
+
+### Serving Production Build
+
+To serve the production build with compression and performance optimizations:
+
+```bash
+npm run serve:prod
+```
+
+This uses an Express server with the following optimizations:
+
+- GZIP compression for all assets
+- Optimized static file serving
+- Client-side routing support
+
+## Performance Optimizations
+
+The template includes several performance optimizations:
+
+- **CSS Purging**: Removes unused Tailwind CSS classes in production
+- **Asset Compression**: GZIP compression for faster downloads
+- **Code Splitting**: Lazy-loaded modules for faster initial loading
+- **Font Loading Optimization**: Non-blocking font loading strategy
+- **Minification**: Optimized JavaScript and CSS
 
 ## Customization
 
