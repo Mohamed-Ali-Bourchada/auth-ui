@@ -1,4 +1,4 @@
-# Auth Dashboard - Modern Authentication Template
+# Auth UI - Modern Authentication Template
 
 A beautiful, responsive authentication UI template built with Angular, Tailwind CSS, and Angular Material. This template provides a modern and sleek authentication experience with animated UI elements, form validation, and a clean design.
 
