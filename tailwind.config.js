@@ -94,17 +94,5 @@ module.exports = {
       addUtilities(newUtilities)
     }
   ],
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: [
-      './src/**/*.html',
-      './src/**/*.ts',
-    ],
-    options: {
-      safelist: [],
-      blocklist: [],
-      keyframes: true,
-      fontFace: true,
-    },
-  },
+  safelist: [],
 }

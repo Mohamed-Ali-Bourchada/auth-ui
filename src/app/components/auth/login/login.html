@@ -1,69 +1,82 @@
-<div class="min-h-screen flex flex-col items-center justify-center p-4 w-full fixed inset-0 overflow-auto">
+<div class="auth-container">
   <!-- Enhanced diagonal split background design  -->
-  <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+  <div class="auth-background">
     <!-- Gradient background base -->
-    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600">
+    <div class="auth-gradient-bg">
       <!-- Decorative elements for the gradient area -->
-      <div class="absolute top-1/4 right-1/4 w-64 h-64 rounded-3xl bg-gradient-to-r from-indigo-500 to-indigo-700 opacity-20 blur-xl rotate-12 animate-pulse"></div>
-      <div class="absolute top-1/2 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-violet-400 to-fuchsia-600 opacity-20 blur-xl animate-blob"></div>
+      <div class="auth-decorative-element-1"></div>
+      <div class="auth-decorative-element-2"></div>
 
       <!-- Subtle grid lines overlay -->
-      <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+      <div class="auth-grid-overlay"></div>
 
       <!-- Modern design elements -->
-      <div class="absolute top-[15%] right-[10%] w-20 h-20 bg-white opacity-10 rounded-full"></div>
-      <div class="absolute top-[30%] left-[20%] w-16 h-16 bg-white opacity-10 rounded-xl rotate-45"></div>
+      <div class="auth-decorative-circle"></div>
+      <div class="auth-decorative-square"></div>
     </div>
 
     <!-- White diagonal overlay using clip-path -->
-    <div class="absolute top-0 left-0 w-full h-full bg-white bg-[linear-gradient(to_right,rgba(240,240,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(240,240,255,0.05)_1px,transparent_1px)] bg-[size:24px_24px]"
-         style="clip-path: polygon(0 45%, 100% 100%, 0 100%);">
-
+    <div class="auth-white-overlay">
       <!-- Subtle pattern for white area -->
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(200,200,255,0.1),transparent_70%)]"></div>
+      <div class="auth-subtle-pattern"></div>
     </div>
 
     <!-- Diagonal border line for clean separation -->
-    <div class="absolute top-0 left-0 w-full h-full pointer-events-none"
-         style="background: linear-gradient(135deg, transparent calc(50% - 1px), rgba(255,255,255,0.3) calc(50% - 1px), rgba(255,255,255,0.3) calc(50% + 1px), transparent calc(50% + 1px));"></div>
+    <div class="auth-diagonal-border"></div>
   </div>
 
   <!-- Login Card with animation - with enhanced shadows -->
-  <div class="w-full max-w-md bg-white rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.06)] backdrop-blur-sm transform transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.09)] animate-fade-in-up">
-    <div class="p-8">
-      <h1 class="text-[24px] font-semibold text-gray-800 mb-2">Sign in to your account</h1>
+  <div class="auth-card">
+    <div class="auth-card-inner">
+      <h1 class="auth-title">Sign in to your account</h1>
 
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-5">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="auth-form">
         <!-- Email Field with animation -->
-        <div class="space-y-2 group">
-          <label for="email" class="block text-sm text-gray-700 font-medium transition-colors group-focus-within:text-stripe-purple">Email</label>
+        <div class="form-group group">
+          <label for="email" class="form-label group-focus-within:text-stripe-purple">Email</label>
           <input
             type="email"
             id="email"
             formControlName="email"
             placeholder="you@company.com"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stripe-purple focus:border-stripe-purple transition-all duration-300"
+            class="form-input"
           >
-          <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-sm text-red-600 animate-fade-in">
+          <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="form-error">
             <span *ngIf="loginForm.get('email')?.hasError('required')">Email is required</span>
             <span *ngIf="loginForm.get('email')?.hasError('email')">Please enter a valid email</span>
           </div>
         </div>
 
         <!-- Password Field with animation -->
-        <div class="space-y-2 group">
+        <div class="form-group group">
           <div class="flex justify-between">
-            <label for="password" class="block text-sm text-gray-700 font-medium transition-colors group-focus-within:text-stripe-purple">Password</label>
-            <a href="#" class="text-sm text-stripe-purple hover:text-stripe-purple-hover transition-colors duration-300">Forgot your password?</a>
+            <label for="password" class="form-label group-focus-within:text-stripe-purple">Password</label>
+            <a routerLink="/reset-password" class="auth-link">Forgot your password?</a>
           </div>
-          <input
-            [type]="hidePassword ? 'password' : 'text'"
-            id="password"
-            formControlName="password"
-            placeholder="••••••••"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stripe-purple focus:border-stripe-purple transition-all duration-300"
-          >
-          <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-sm text-red-600 animate-fade-in">
+          <div class="form-input-wrapper">
+            <input
+              [type]="hidePassword ? 'password' : 'text'"
+              id="password"
+              formControlName="password"
+              placeholder="••••••••"
+              class="form-input"
+            >
+            <button
+              type="button"
+              (click)="hidePassword = !hidePassword"
+              class="form-toggle-password"
+              aria-label="Toggle password visibility"
+            >
+              <svg *ngIf="hidePassword" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+              <svg *ngIf="!hidePassword" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+              </svg>
+            </button>
+          </div>
+          <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="form-error">
             <span *ngIf="loginForm.get('password')?.hasError('required')">Password is required</span>
             <span *ngIf="loginForm.get('password')?.hasError('minlength')">Password must be at least 6 characters</span>
           </div>
@@ -84,14 +97,14 @@
         <button
           type="submit"
           [disabled]="loginForm.invalid || isLoading"
-          class="w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white py-2 px-4 rounded-md transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md flex justify-center"
+          class="btn-primary"
         >
           <span *ngIf="isLoading" class="inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-middle"></span>
           <span *ngIf="!isLoading">Sign in</span>
         </button>
 
         <!-- Error Message with animation -->
-        <div *ngIf="errorMessage" class="bg-red-50 text-red-600 p-3 rounded-md text-sm flex items-center animate-pulse">
+        <div *ngIf="errorMessage" class="error-message">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
           </svg>
@@ -100,19 +113,19 @@
       </form>
 
       <!-- Divider with animation -->
-      <div class="relative my-6 animate-fade-in">
-        <div class="absolute inset-0 flex items-center">
-          <div class="w-full border-t border-gray-200"></div>
+      <div class="auth-divider">
+        <div class="auth-divider-line">
+          <div class="auth-divider-line-inner"></div>
         </div>
-        <div class="relative flex justify-center text-sm">
-          <span class="px-2 bg-white text-gray-500">OR</span>
+        <div class="auth-divider-text">
+          <span class="auth-divider-text-inner">OR</span>
         </div>
       </div>
 
       <!-- Social Login Buttons with animation -->
-      <div class="space-y-3">
+      <div class="social-buttons">
         <!-- Google Login -->
-        <button type="button" class="w-full flex items-center justify-center px-4 py-2 border border-gray-200 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md">
+        <button type="button" class="social-button">
           <svg class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
             <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -123,7 +136,7 @@
         </button>
 
         <!-- GitHub Login -->
-        <button type="button" class="w-full flex items-center justify-center px-4 py-2 border border-gray-200 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md">
+        <button type="button" class="social-button">
           <svg class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.22.66-.48v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
           </svg>
@@ -131,15 +144,15 @@
         </button>
 
         <!-- SSO Login -->
-        <button type="button" class="w-full flex items-center justify-center px-4 py-2 border border-gray-200 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md">
+        <button type="button" class="social-button">
           Sign in with SSO
         </button>
       </div>
 
       <!-- Footer with animation -->
-      <div class="mt-8 text-center animate-fade-in">
-        <p class="text-sm text-gray-600">
-          New to our platform? <a routerLink="/signup" class="text-stripe-purple hover:text-stripe-purple-hover transition-colors duration-300">Create an account</a>
+      <div class="auth-footer">
+        <p class="auth-footer-text">
+          New to our platform? <a routerLink="/signup" class="auth-link">Create an account</a>
         </p>
       </div>
     </div>

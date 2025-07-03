@@ -15,25 +15,6 @@ A beautiful, responsive authentication UI template built with Angular, Tailwind 
 - 🛠️ **Built with Angular & Tailwind** - Leveraging modern web technologies
 - ⚡ **Performance Optimized** - Compressed assets, optimized CSS/JS, and fast loading times
 
-## Authentication Pages
-
-### Login Page
-
-- Email/password authentication
-- Social login options (Google, GitHub, SSO)
-- Remember me functionality
-- Password recovery link
-- Form validation with error messages
-- Loading state animation
-
-### Signup Page
-
-- New user registration
-- Name, email, and password fields
-- Terms and conditions acceptance
-- Social signup options
-- Form validation with error messages
-- Loading state animation
 
 ## Getting Started
 

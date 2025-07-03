@@ -6,6 +6,200 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
+/* Auth Component Shared Styles */
+@layer components {
+  /* Auth Layout Components */
+  .auth-container {
+    @apply min-h-screen flex flex-col items-center justify-center p-4 w-full fixed inset-0 overflow-auto;
+  }
+
+  .auth-background {
+    @apply absolute top-0 left-0 w-full h-full overflow-hidden -z-10;
+  }
+
+  .auth-gradient-bg {
+    @apply absolute top-0 left-0 w-full h-full bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600;
+  }
+
+  .auth-decorative-element-1 {
+    @apply absolute top-1/4 right-1/4 w-64 h-64 rounded-3xl bg-gradient-to-r from-indigo-500 to-indigo-700 opacity-20 blur-xl rotate-12 animate-pulse;
+  }
+
+  .auth-decorative-element-2 {
+    @apply absolute top-1/2 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-violet-400 to-fuchsia-600 opacity-20 blur-xl animate-blob;
+  }
+
+  .auth-grid-overlay {
+    @apply absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:32px_32px];
+  }
+
+  .auth-decorative-circle {
+    @apply absolute top-[15%] right-[10%] w-20 h-20 bg-white opacity-10 rounded-full;
+  }
+
+  .auth-decorative-square {
+    @apply absolute top-[30%] left-[20%] w-16 h-16 bg-white opacity-10 rounded-xl rotate-45;
+  }
+
+  .auth-white-overlay {
+    @apply absolute top-0 left-0 w-full h-full bg-white bg-[linear-gradient(to_right,rgba(240,240,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(240,240,255,0.05)_1px,transparent_1px)] bg-[size:24px_24px];
+  }
+
+  .auth-subtle-pattern {
+    @apply absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(200,200,255,0.1),transparent_70%)];
+  }
+
+  .auth-diagonal-border {
+    @apply absolute top-0 left-0 w-full h-full pointer-events-none;
+  }
+
+  /* Auth Card Components */
+  .auth-card {
+    @apply w-full max-w-md bg-white rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.06)] backdrop-blur-sm transform transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.09)] animate-fade-in-up;
+  }
+
+  .auth-card-inner {
+    @apply p-8;
+  }
+
+  .auth-title {
+    @apply text-[24px] font-semibold text-gray-800 mb-2;
+  }
+
+  .auth-subtitle {
+    @apply text-gray-600 mb-6;
+  }
+
+  /* Form Components */
+  .auth-form {
+    @apply space-y-5;
+  }
+
+  .form-group {
+    @apply space-y-2;
+  }
+
+  .form-label {
+    @apply block text-sm text-gray-700 font-medium transition-colors;
+  }
+
+  .form-input-wrapper {
+    @apply relative;
+  }
+
+  .form-input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stripe-purple focus:border-stripe-purple transition-all duration-300;
+  }
+
+  .form-input-code {
+    @apply form-input text-center tracking-wider text-lg;
+  }
+
+  .form-toggle-password {
+    @apply absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700;
+  }
+
+  .form-error {
+    @apply text-sm text-red-600 animate-fade-in;
+  }
+
+  /* Button Components */
+  .btn-primary {
+    @apply w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white py-2 px-4 rounded-md transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md flex justify-center;
+  }
+
+  .btn-text {
+    @apply text-stripe-purple hover:text-stripe-purple-hover transition-colors duration-300 font-medium;
+  }
+
+  /* Message Components */
+  .success-message {
+    @apply bg-green-50 text-green-600 p-4 rounded-md text-sm flex items-center mb-4 animate-fade-in;
+  }
+
+  .error-message {
+    @apply bg-red-50 text-red-600 p-3 rounded-md text-sm flex items-center animate-pulse;
+  }
+
+  /* Divider Components */
+  .auth-divider {
+    @apply relative my-6 animate-fade-in;
+  }
+
+  .auth-divider-line {
+    @apply absolute inset-0 flex items-center;
+  }
+
+  .auth-divider-line-inner {
+    @apply w-full border-t border-gray-200;
+  }
+
+  .auth-divider-text {
+    @apply relative flex justify-center text-sm;
+  }
+
+  .auth-divider-text-inner {
+    @apply px-2 bg-white text-gray-500;
+  }
+
+  /* Social Login Components */
+  .social-buttons {
+    @apply space-y-3;
+  }
+
+  .social-button {
+    @apply w-full flex items-center justify-center px-4 py-2 border border-gray-200 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md;
+  }
+
+  /* Footer Components */
+  .auth-footer {
+    @apply mt-8 text-center animate-fade-in;
+  }
+
+  .auth-footer-text {
+    @apply text-sm text-gray-600;
+  }
+
+  .auth-link {
+    @apply text-stripe-purple hover:text-stripe-purple-hover transition-colors duration-300;
+  }
+
+  .auth-back-link {
+    @apply text-stripe-purple hover:text-stripe-purple-hover transition-colors duration-300;
+  }
+
+  /* Additional styles from auth-styles.scss */
+  :host {
+    --stripe-purple: #635bff;
+    --stripe-purple-hover: #7a73ff;
+  }
+
+  /* Custom color classes */
+  :global(.text-stripe-purple) {
+    color: var(--stripe-purple);
+  }
+
+  :global(.text-stripe-purple-hover) {
+    color: var(--stripe-purple-hover);
+  }
+
+  :global(.focus\:ring-stripe-purple:focus) {
+    --tw-ring-color: var(--stripe-purple);
+  }
+
+  :global(.focus\:border-stripe-purple:focus) {
+    border-color: var(--stripe-purple);
+  }
+
+  :global(.bg-stripe-purple) {
+    background-color: var(--stripe-purple);
+  }
+
+  :global(.hover\:bg-stripe-purple-hover:hover) {
+    background-color: var(--stripe-purple-hover);
+  }
+}
+
 @layer utilities {
   .animation-delay-2000 {
     animation-delay: 2s;
@@ -53,11 +247,11 @@
 
 /* Animation for fade in up effect */
 @keyframes fade-in-up {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(20px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
@@ -69,16 +263,42 @@
 
 /* Animation for fade in */
 @keyframes fade-in {
-  0% {
+  from {
     opacity: 0;
   }
-  100% {
+  to {
     opacity: 1;
   }
 }
 
 .animate-fade-in {
   animation: fade-in 0.3s ease-out;
+}
+
+/* Animation for shake effect */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.2;
+  }
 }
 
 :root {
@@ -102,8 +322,9 @@
   --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.02);
   --transition: all 0.2s ease;
   --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  /* Shared auth component variables */
   --stripe-purple: #635bff;
-  --stripe-purple-hover: #5851e5;
+  --stripe-purple-hover: #7a73ff; /* Updated to match auth components */
 }
 
 * {
@@ -132,195 +353,10 @@ a:hover {
   color: var(--primary-hover);
 }
 
-.auth-card {
-  width: 100%;
-  max-width: 460px;
-  padding: 40px;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  background-color: var(--card-background);
-  border: 1px solid var(--border);
+.auth-white-overlay {
+  clip-path: polygon(0 45%, 100% 100%, 0 100%);
 }
 
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-field {
-  width: 100%;
-}
-
-/* Custom styling for Material form fields */
-::ng-deep .mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline {
-  border-radius: var(--radius-sm);
-}
-
-::ng-deep .mat-mdc-form-field-appearance-outline .mat-mdc-text-field-wrapper {
-  background-color: var(--card-background);
-  transition: var(--transition);
-}
-
-::ng-deep .mat-mdc-form-field-appearance-outline:hover .mat-mdc-text-field-wrapper {
-  background-color: var(--primary-light);
-}
-
-::ng-deep .mat-mdc-form-field-appearance-outline .mat-mdc-form-field-flex {
-  height: 48px;
-}
-
-::ng-deep .mat-mdc-form-field-appearance-outline .mat-mdc-form-field-infix {
-  padding: 12px 0;
-}
-
-::ng-deep .mat-mdc-form-field-label-wrapper {
-  top: -0.75em;
-}
-
-::ng-deep .mat-mdc-form-field-appearance-outline.mat-focused .mat-mdc-form-field-outline-thick {
-  color: var(--primary);
-}
-
-.auth-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 24px;
-}
-
-.auth-submit {
-  width: 100%;
-  height: 48px;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  text-transform: none;
-  transition: var(--transition);
-  background-color: var(--primary);
-}
-
-.auth-submit:hover:not([disabled]) {
-  background-color: var(--primary-hover);
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-1px);
-}
-
-.social-login-buttons {
-  display: flex;
-  gap: 12px;
-  margin-top: 24px;
-}
-
-.social-button {
-  flex: 1;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background-color: var(--card-background);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: var(--transition);
-  color: var(--text-secondary);
-}
-
-.social-button:hover {
-  background-color: var(--primary-light);
-  border-color: var(--border);
-  box-shadow: var(--shadow-sm);
-}
-
-.auth-divider {
-  margin: 24px 0;
-  text-align: center;
-  position: relative;
-}
-
-.auth-divider::before,
-.auth-divider::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 45%;
-  height: 1px;
-  background-color: var(--border);
-}
-
-.auth-divider::before {
-  left: 0;
-}
-
-.auth-divider::after {
-  right: 0;
-}
-
-.auth-divider-text {
-  display: inline-block;
-  padding: 0 12px;
-  background-color: var(--card-background);
-  position: relative;
-  color: var(--text-tertiary);
-  font-size: 14px;
-}
-
-.auth-footer {
-  margin-top: 32px;
-  text-align: center;
-  font-size: 14px;
-  color: var(--text-secondary);
-}
-
-.error-message {
-  color: var(--error);
-  font-size: 14px;
-  margin-top: 16px;
-  text-align: center;
-  padding: 12px;
-  background-color: rgba(223, 27, 65, 0.05);
-  border-radius: var(--radius-sm);
-}
-
-/* Responsive adjustments */
-@media (max-width: 480px) {
-  .auth-card {
-    padding: 24px;
-    max-width: 100%;
-    box-shadow: none;
-    border: none;
-  }
-}
-
-/* Custom form focus styles */
-input:focus, textarea:focus, select:focus {
-  @apply ring-2 ring-stripe-purple border-stripe-purple outline-none transition-all duration-300;
-}
-
-/* Button hover effects */
-button:not(:disabled) {
-  @apply transition-all duration-300 transform hover:-translate-y-0.5;
-}
-
-/* Card hover effects */
-.card-hover {
-  @apply transition-all duration-300 hover:shadow-lg;
-}
-
-/* Animated background gradient */
-.bg-gradient-animate {
-  background-size: 200% 200%;
-  animation: gradient-animation 15s ease infinite;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.auth-diagonal-border {
+  background: linear-gradient(135deg, transparent calc(50% - 1px), rgba(255,255,255,0.3) calc(50% - 1px), rgba(255,255,255,0.3) calc(50% + 1px), transparent calc(50% + 1px));
 }

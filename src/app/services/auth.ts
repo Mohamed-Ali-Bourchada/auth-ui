@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { User, LoginRequest, SignupRequest, AuthResponse } from '../models/user.model';
+import { User, LoginRequest, SignupRequest, AuthResponse, ResetPasswordRequest, VerifyCodeRequest, UpdatePasswordRequest } from '../models/user.model';
 import { delay, tap } from 'rxjs/operators';
 
 @Injectable({
@@ -66,19 +66,43 @@ export class AuthService {
     // Clear user from local storage
     localStorage.removeItem('currentUser');
     localStorage.removeItem('token');
-    
+
     // Reset auth state
     this.currentUserSubject.next(null);
     this.isAuthenticatedSubject.next(false);
+  }
+
+  requestPasswordReset(request: ResetPasswordRequest): Observable<{ success: boolean }> {
+    // This is a mock implementation. In a real app, you would make an HTTP request to your backend
+    console.log('Password reset requested for:', request.email);
+
+    // Simulate API delay
+    return of({ success: true }).pipe(delay(800));
+  }
+
+  verifyResetCode(request: VerifyCodeRequest): Observable<{ success: boolean }> {
+    // This is a mock implementation. In a real app, you would make an HTTP request to your backend
+    console.log('Verifying code for:', request.email, 'Code:', request.code);
+
+    // Simulate API delay
+    return of({ success: true }).pipe(delay(800));
+  }
+
+  updatePassword(request: UpdatePasswordRequest): Observable<{ success: boolean }> {
+    // This is a mock implementation. In a real app, you would make an HTTP request to your backend
+    console.log('Updating password for:', request.email);
+
+    // Simulate API delay
+    return of({ success: true }).pipe(delay(800));
   }
 
   private setAuthState(authResponse: AuthResponse): void {
     // Store user and token in local storage
     localStorage.setItem('currentUser', JSON.stringify(authResponse.user));
     localStorage.setItem('token', authResponse.token);
-    
+
     // Update auth state
     this.currentUserSubject.next(authResponse.user);
     this.isAuthenticatedSubject.next(true);
   }
-} 
+}
